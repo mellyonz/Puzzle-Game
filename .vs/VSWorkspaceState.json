@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Assets"
+    "\\Assets",
+    "\\Assets\\Scripts"
   ],
-  "SelectedNode": "\\Assets\\NewBehaviourScript.cs",
+  "SelectedNode": "\\Assets\\grid.cs",
   "PreviewInSolutionExplorer": false
 }
