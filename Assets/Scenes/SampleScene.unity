@@ -179,9 +179,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mapClick: {fileID: 1976648274}
-  mapNumber: {fileID: 0}
-  tileBasic: {fileID: 11400000, guid: 90bbd44a37282cb4abf45671ef195762, type: 2}
   tileNumber: {fileID: 1470085665048262, guid: d1e7e292521c15346b704f6a6db0c085, type: 3}
+  tileBasic: {fileID: 11400000, guid: 90bbd44a37282cb4abf45671ef195762, type: 2}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
