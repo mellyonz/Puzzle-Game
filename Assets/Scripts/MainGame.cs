@@ -18,7 +18,9 @@ public class MainGame : MonoBehaviour
     public string name;
   }
 
-  //Create the a global level that will be load the json file into
+  public Canvas dialogBox;
+
+  // Create the a global level that will be load the json file into
   Level level = new Level();
 
   // Main game Tilemap
@@ -27,18 +29,22 @@ public class MainGame : MonoBehaviour
   // Tilemap tiles objects
   public GameObject tileNumber;
   public Tile tileBasic;
+  public Sprite square1;
+  public Sprite square2;
+  public Sprite square3;
+
 
   // Start is called before the first frame update
   void Start()
   {
     // Read the json file into a local string 
-    string json = File.ReadAllText(Application.dataPath + "/Scripts/Map1.json");
+    string json = File.ReadAllText(UnityEngine.Application.dataPath + "/Scripts/Maps/Map1.json");
     //Debug.Log(json);
 
     level = JsonUtility.FromJson<Level>(json);
     //Debug.Log(level.tileArray[0]);
-    level.tileCorrect = new int[level.width * level.height];
-    level.tileSelected = new int[level.width * level.height];
+    //level.tileCorrect = new int[level.width * level.height];
+    //level.tileSelected = new int[level.width * level.height];
 
     // Simple loop for the coordinates
     for (int x = 0; x < level.width; x++)
@@ -60,11 +66,27 @@ public class MainGame : MonoBehaviour
           number.text = level.tileType[levelCell].ToString();
         }
 
+
+        if (x == 0 && y != level.height - 1) 
+        {
+          tileBasic.sprite = square2;
+        }else if(y == level.height-1 && x != 0)
+        {
+          tileBasic.sprite = square3;
+        }else
+        {
+          tileBasic.sprite = square1;
+        }
+
         // This is another instantiate but all the changes need be in place before creation
         mapClick.SetTile(new Vector3Int(x, y, 0), tileBasic);
 
-        // Destroy the original object after the launch
-        Destroy(tileBasic.gameObject, 1);
+        if (level.tileSelected[levelCell] == 1)
+        {
+          SetTileColour(Color.red, new Vector3Int(x, y, 0));
+        }
+          // Destroy the original object after the launch
+          Destroy(tileBasic.gameObject, 1);
       };
     };
   }
@@ -81,26 +103,33 @@ public class MainGame : MonoBehaviour
 
       // Return tileMap x and y (x, y, z) based on the clicked tile position
       Vector3Int idClick = GetIdCell(pos);
-      Debug.Log(idClick);
-
-      //level.tileSelected[idClick.y * level.width + idClick.x] = 1;
+      //Debug.Log(idClick);
 
       // Set color to red if tile is white else color is white
       if (mapClick.GetColor(idClick) == Color.white)
       {
         SetTileColour(Color.red, idClick);
-      }else
+        level.tileSelected[idClick.y * level.width + idClick.x] = 1;
+      }
+      else
       {
         SetTileColour(Color.white, idClick);
+        level.tileSelected[idClick.y * level.width + idClick.x] = 0;
       }
     }
 
 
-
-    string json = JsonUtility.ToJson(level);
-    //Debug.Log(json);
-
-    File.WriteAllText(Application.dataPath + "/Scripts/Map1.json", json);
+    if(level.tileSelected.SequenceEqual(level.tileCorrect)) 
+    {
+      Debug.Log("Won");
+      dialogBox.gameObject.SetActive(true);
+    }
+    else
+    { 
+      string json = JsonUtility.ToJson(level);
+      File.WriteAllText(UnityEngine.Application.dataPath + "/Scripts/Map1.json", json);
+      Debug.Log("Not Won");
+    }
   }
 
   // Basic functions
