@@ -1,21 +1,21 @@
-<<<<<<< HEAD
-# Puzzle Game
+## Puzzle Game
  
 =======
-Methodology 1
-Unity Hub
-This is a tool used to develop the unity game. The most obvious change compared to other IDE is its focus on a scene and not any form of code. Most IDE have some drop and drag feature but it normally isn갽t the primary way you implement things in the IDE and only works for some languages.
-In unity it갽s in reverse the drop and drag UI if the primary feature and the scripts or code are the addition.
+## Methodology 1
+# Unity Hub
+This is a tool used to develop the unity game. The most obvious change compared to other IDE is its focus on a scene and not any form of code. Most IDE have some drop and drag feature but it normally isn혖ft the primary way you implement things in the IDE and only works for some languages.
+In unity it혖fs in reverse the drop and drag UI if the primary feature and the scripts or code are the addition.
 With this knowledge I will need to sift through the UI elements and turn them into code. The UI elements are inherently hard coded and not dynamic but if I can generate UI element with code, I can break this inbuilt cycle.
-Working with Unity
-The Scene and code division adds a very interesting problem especially for a puzzle game that needs dynamic generation. That problem is I don갽t need the scene at all, the only potential us is for something like backgrounds or UI.
+
+# Working with Unity
+The Scene and code division adds a very interesting problem especially for a puzzle game that needs dynamic generation. That problem is I don혖ft need the scene at all, the only potential us is for something like backgrounds or UI.
 The ability to create a dynamic puzzle requires the creation of the scenes assets that can be scaled. For future note a 2d game assets would instead be duplicated many times.
 Another way to look at this is each scene asset is a separate view interface. They can instance once created and manipulated; this is how normal Unity development works but on a much smaller scale.
-Pushed to the extreme one asset could serve the entire program갽s needs, like let갽s say like moving grass.
+Pushed to the extreme one asset could serve the entire program혖fs needs, like let혖fs say like moving grass.
 (Unity, 2019)
 
 
-MoSCoW
+# MoSCoW
 A good idea of what I need to priorities in each prototype.
 Must
 1. Instanced grid asset
