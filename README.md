@@ -3,15 +3,15 @@
 =======
 ## Methodology 1
 # Unity Hub
-This is a tool used to develop the unity game. The most obvious change compared to other IDE is its focus on a scene and not any form of code. Most IDE have some drop and drag feature but it normally isnft the primary way you implement things in the IDE and only works for some languages.
-In unity itfs in reverse the drop and drag UI if the primary feature and the scripts or code are the addition.
+This is a tool used to develop the unity game. The most obvious change compared to other IDE is its focus on a scene and not any form of code. Most IDE have some drop and drag feature but it normally isn't the primary way you implement things in the IDE and only works for some languages.
+In unity it's in reverse the drop and drag UI if the primary feature and the scripts or code are the addition.
 With this knowledge I will need to sift through the UI elements and turn them into code. The UI elements are inherently hard coded and not dynamic but if I can generate UI element with code, I can break this inbuilt cycle.
 
 # Working with Unity
 The Scene and code division adds a very interesting problem especially for a puzzle game that needs dynamic generation. That problem is I donft need the scene at all, the only potential us is for something like backgrounds or UI.
 The ability to create a dynamic puzzle requires the creation of the scenes assets that can be scaled. For future note a 2d game assets would instead be duplicated many times.
 Another way to look at this is each scene asset is a separate view interface. They can instance once created and manipulated; this is how normal Unity development works but on a much smaller scale.
-Pushed to the extreme one asset could serve the entire programfs needs, like letfs say like moving grass.
+Pushed to the extreme one asset could serve the entire programfs needs, like let's say like moving grass.
 (Unity, 2019)
 
 
@@ -34,8 +34,3 @@ Could
 Would
 1. Add some navigation
 2. Hints to help discover the image
->>>>>>> parent of 72bd128... Update and rename README.md to README.txt
-=======
-# Puzzle Game
- 
->>>>>>> parent of 70d9278... Update Readme
