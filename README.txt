@@ -1,4 +1,5 @@
 <<<<<<< HEAD:README.txt
+<<<<<<< HEAD:README.txt
 Introduction
 Brief
 This area will be added to as new knowledge as each section is acquired. I will also try a pair each introduction section with the GitHub commits. A good starting note is the Unity IDE. It is made for non-programmers since even some of the most advanced tutorials are very simple in terms of programing knowledge.
@@ -32,6 +33,10 @@ Instantiate the UI assets.
 Would
 Add some navigation
 Hints to help discover the image
+=======
+# Puzzle Game
+ 
+>>>>>>> parent of 70d9278... Update Readme:README.md
 =======
 # Puzzle Game
  
